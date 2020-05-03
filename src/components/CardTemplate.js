@@ -5,9 +5,6 @@ import clsx from 'clsx';
 
 export default function CardTemplate({ children }) {
   const useStyles = makeStyles(theme => ({
-    root: {
-      display: 'flex',
-    },
     paper: {
       padding: theme.spacing(2),
       display: 'flex',
@@ -30,7 +27,7 @@ export default function CardTemplate({ children }) {
   return (
     <Container maxWidth="lg" className={classes.container}>
       <Grid container spacing={3}>
-        <Grid item xs zeroMinWidth>
+        <Grid item xs={12}>
           <Paper className={fixedHeightPaper}>{children}</Paper>
         </Grid>
       </Grid>

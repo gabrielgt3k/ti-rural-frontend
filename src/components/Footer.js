@@ -9,8 +9,8 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary">
       {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Rural Brasil
+      <Link color="inherit" href="http://www.ruralbrasil.com/">
+        Rural Brasil - Tecnologia da Informação
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -22,12 +22,12 @@ const useStyles = makeStyles(theme => ({
   footer: {
     padding: theme.spacing(3, 2),
     display: 'flex',
+    // position: 'fixed',
+    bottom: 0,
+    left: 0,
+    width: '100%',
     flexDirection: 'column',
     marginTop: 'auto',
-    backgroundColor:
-      theme.palette.type === 'dark'
-        ? theme.palette.grey[800]
-        : theme.palette.grey[200],
   },
 }));
 

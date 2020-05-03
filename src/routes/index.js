@@ -5,6 +5,7 @@ import Home from '../pages/Home';
 import LinhasOi from '../pages/LinhasOi';
 import Login from '../pages/Login';
 import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 export default function Routes() {
   return (
@@ -14,6 +15,7 @@ export default function Routes() {
         <Nav>
           <Route path="/home" component={Home} isPrivate />
           <Route path="/linhas" component={LinhasOi} isPrivate />
+          <Footer />
         </Nav>
       </Switch>
     </>
