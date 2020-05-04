@@ -57,8 +57,7 @@ const DialogForm = props => {
 
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
-  const { linha, isEditing, data, operadora } = props;
-  const { obtemTempLinha } = data;
+  const { linha, isEditing, operadora, obtemTempLinha } = props;
 
   const [editLinha, setEditLinha] = useState({
     id: 0,

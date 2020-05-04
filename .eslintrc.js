@@ -33,6 +33,7 @@ module.exports = {
     ],
     'import/prefer-default-export': 'off',
     "react/jsx-props-no-spreading": "off",
+    "react/jsx-no-bind": "off",
     "no-param-reassign": [2, {"props": false}]
   },
 };

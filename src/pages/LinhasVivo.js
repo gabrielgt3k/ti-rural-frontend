@@ -36,15 +36,19 @@ const LinhasOi = () => {
       loadData();
     }, 1500);
   }, []);
-  function getUpdatedList(linha, add = true) {
-    const list = data.filter(l => l.id !== linha.id);
-    if (add) list.push(linha);
-    return list;
-  }
 
   const obtemTempLinha = useCallback(linha => {
     setTempLinha({ ...linha });
   }, []);
+
+  const getUpdatedList = useCallback(
+    linha => {
+      const list = data.filter(l => l.id !== linha.id);
+      list.unshift(linha);
+      return list;
+    },
+    [data]
+  );
 
   useEffect(() => {
     function updateTable() {
@@ -53,7 +57,7 @@ const LinhasOi = () => {
       }
     }
 
-    updateTable();
+    updateTable(); // eslint-disable-next-line
   }, [tempLinha]);
 
   const getCurrentLinha = tableData => {
@@ -136,7 +140,7 @@ const LinhasOi = () => {
         customBodyRender: (value, tableMeta) => (
           <>
             <DialogForm
-              data={{ obtemTempLinha: obtemTempLinha.bind(this) }}
+              obtemTempLinha={obtemTempLinha.bind(this)}
               linha={getCurrentLinha(tableMeta.rowData)}
               isEditing
               operadora="Vivo"
@@ -221,7 +225,7 @@ const LinhasOi = () => {
     <>
       <div style={{ marginBottom: 10 }}>
         <DialogForm
-          data={{ obtemTempLinha: obtemTempLinha.bind(this) }}
+          obtemTempLinha={obtemTempLinha.bind(this)}
           operadora="Vivo"
         />
       </div>
