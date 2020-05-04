@@ -22,10 +22,10 @@ export default function Home() {
     <>
       <Container component="div" className={classes.container}>
         <TotalLinhas />
-        <TotalEquipamentos />
+        <Chart />
       </Container>
       <Container>
-        <Chart />
+        <TotalEquipamentos />
       </Container>
     </>
   );

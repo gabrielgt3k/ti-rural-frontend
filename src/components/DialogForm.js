@@ -57,7 +57,7 @@ const DialogForm = props => {
 
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
-  const { linha, isEditing, data } = props;
+  const { linha, isEditing, data, operadora } = props;
   const { obtemTempLinha } = data;
 
   const [editLinha, setEditLinha] = useState({
@@ -65,6 +65,7 @@ const DialogForm = props => {
     numero: '',
     dono_linha: '',
     loja: '',
+    operadora,
     status: '',
   });
 
@@ -75,7 +76,7 @@ const DialogForm = props => {
       dono_linha: '',
       email_dono: '',
       loja: '',
-      operadora: 'Oi',
+      operadora,
       status: '',
     });
   };
@@ -116,6 +117,11 @@ const DialogForm = props => {
       const url = linhaSubmit.id ? `/linhas/${linhaSubmit.id}` : `/linhas`;
       const response = await api[method](url, linhaSubmit);
       obtemTempLinha(response.data);
+      toast.success(
+        method === 'put'
+          ? 'Linha alterada com sucesso!'
+          : 'Linha cadastrada com sucesso!'
+      );
     } catch (error) {
       const errorMessage = error.response.data.error;
       toast.error(errorMessage);
@@ -151,7 +157,7 @@ const DialogForm = props => {
           startIcon={<AddIcCallIcon />}
           onClick={handleClickOpen}
         >
-          Criar uma nova linha
+          Cadastrar linha
         </Button>
       )}
 

@@ -239,7 +239,7 @@ export default function Nav({ children }) {
                 onClick={handleDrawerClose}
                 className={classes.nested}
                 component={Link}
-                to="/linhas"
+                to="/linhas-oi"
               >
                 <ListItemIcon>
                   <PhoneIcon style={{ color: '#fafafa' }} />
@@ -255,7 +255,7 @@ export default function Nav({ children }) {
                 onClick={handleDrawerClose}
                 className={classes.nested}
                 component={Link}
-                to="/linhas"
+                to="/linhas-vivo"
               >
                 <ListItemIcon>
                   <PhoneIcon style={{ color: '#fafafa' }} />

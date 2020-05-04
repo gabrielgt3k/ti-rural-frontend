@@ -20,12 +20,13 @@ const LinhasOi = () => {
     dono_linha: '',
     email_dono: '',
     loja: '',
+    operadora: 'Oi',
     status: '',
   });
 
   useEffect(() => {
     async function loadData() {
-      const response = await api.get('/linhas');
+      const response = await api.get('/linhas/oi');
       setData(response.data);
       setLoadingTable(false);
     }
@@ -138,6 +139,7 @@ const LinhasOi = () => {
               data={{ obtemTempLinha: obtemTempLinha.bind(this) }}
               linha={getCurrentLinha(tableMeta.rowData)}
               isEditing
+              operadora="Oi"
             />
           </>
         ),
@@ -218,7 +220,10 @@ const LinhasOi = () => {
   return (
     <>
       <div style={{ marginBottom: 10 }}>
-        <DialogForm data={{ obtemTempLinha: obtemTempLinha.bind(this) }} />
+        <DialogForm
+          data={{ obtemTempLinha: obtemTempLinha.bind(this) }}
+          operadora="Oi"
+        />
       </div>
       <MuiThemeProvider theme={theme}>
         <MUIDataTable

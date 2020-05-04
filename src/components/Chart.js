@@ -7,6 +7,7 @@ import {
   YAxis,
   Label,
   ResponsiveContainer,
+  CartesianGrid,
 } from 'recharts';
 import Title from './Title';
 import CardTemplate from './CardTemplate';
@@ -54,11 +55,12 @@ export default function Chart() {
               Sales ($)
             </Label>
           </YAxis>
+          <CartesianGrid />
           <Line
             type="monotone"
             dataKey="amount"
             stroke={theme.palette.primary.main}
-            dot={false}
+            dot
           />
         </LineChart>
       </ResponsiveContainer>
