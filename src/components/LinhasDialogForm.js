@@ -19,6 +19,7 @@ import {
 } from '@material-ui/core';
 import CreateIcon from '@material-ui/icons/Create';
 import AddIcCallIcon from '@material-ui/icons/AddIcCall';
+import PropTypes from 'prop-types';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 
@@ -52,7 +53,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const DialogForm = props => {
+const LinhasDialogForm = props => {
   const classes = useStyles();
 
   const [open, setOpen] = useState(false);
@@ -260,4 +261,16 @@ const DialogForm = props => {
   );
 };
 
-export default DialogForm;
+LinhasDialogForm.defaultProps = {
+  linha: {},
+  isEditing: false,
+  obtemTempLinha: () => {},
+};
+LinhasDialogForm.propTypes = {
+  linha: PropTypes.objectOf(PropTypes.any),
+  isEditing: PropTypes.bool,
+  operadora: PropTypes.string.isRequired,
+  obtemTempLinha: PropTypes.func,
+};
+
+export default LinhasDialogForm;

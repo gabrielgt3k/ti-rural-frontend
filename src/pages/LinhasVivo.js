@@ -8,7 +8,7 @@ import {
   createMuiTheme,
 } from '@material-ui/core';
 
-import DialogForm from '../components/DialogForm';
+import DialogForm from '../components/LinhasDialogForm';
 import api from '../services/api';
 
 const LinhasOi = () => {
