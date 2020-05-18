@@ -9,7 +9,7 @@ export default function TotalLinhas() {
   const [totalEquip, setTotalEquip] = useState(0);
 
   useEffect(() => {
-    setTotalEquip(7);
+    setTotalEquip(0);
   }, []);
 
   const useStyles = makeStyles(theme => ({
