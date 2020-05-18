@@ -7,7 +7,7 @@ export default reducers => {
     {
       key: 'ti-rural',
       storage,
-      whitelist: ['auth'],
+      whitelist: ['auth', 'user'],
     },
     reducers
   );

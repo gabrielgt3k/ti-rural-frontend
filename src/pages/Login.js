@@ -19,7 +19,7 @@ import { useFormik } from 'formik';
 import { signInRequest } from '../store/modules/auth/actions';
 
 import logoRural from '../assets/logo_rural_ti.png';
-import bgLodin from '../assets/bg-rural.jpg';
+import bgLodin from '../assets/logo2.png';
 
 function Copyright() {
   return (
@@ -46,7 +46,6 @@ const useStyles = makeStyles(theme => ({
         ? theme.palette.grey[50]
         : theme.palette.grey[900],
     backgroundSize: 'cover',
-    backgroundPosition: 'center',
   },
   paper: {
     margin: theme.spacing(8, 4),

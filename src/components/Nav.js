@@ -19,6 +19,8 @@ import {
 } from '@material-ui/core/';
 import { useDispatch, useSelector } from 'react-redux';
 import PeopleIcon from '@material-ui/icons/People';
+import DevicesIcon from '@material-ui/icons/Devices';
+import ReceiptIcon from '@material-ui/icons/Receipt';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import AccountCircle from '@material-ui/icons/AccountCircle';
@@ -28,6 +30,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { signOut } from '../store/modules/auth/actions';
+import { store } from '../store';
 
 const drawerWidth = 240;
 
@@ -118,13 +121,14 @@ const useStyles = makeStyles(theme => ({
 
 export default function Nav({ children }) {
   const classes = useStyles();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const [openLinhas, setOpenLinhas] = useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const openMenu = Boolean(anchorEl);
 
   const dispatch = useDispatch();
-  const profile = useSelector(state => state.user.profile);
+  const { profile } = store.getState();
+  console.log(profile);
 
   const handleListLinhas = () => {
     setOpenLinhas(!openLinhas);
@@ -266,9 +270,24 @@ export default function Nav({ children }) {
           </Collapse>
           <ListItem button>
             <ListItemIcon>
-              <PeopleIcon style={{ color: '#fafafa' }} />
+              <DevicesIcon style={{ color: '#fafafa' }} />
             </ListItemIcon>
             <ListItemText style={{ color: '#fafafa' }} primary="Equipamentos" />
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon>
+              <PeopleIcon style={{ color: '#fafafa' }} />
+            </ListItemIcon>
+            <ListItemText style={{ color: '#fafafa' }} primary="Usuários" />
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon>
+              <ReceiptIcon style={{ color: '#fafafa' }} />
+            </ListItemIcon>
+            <ListItemText
+              style={{ color: '#fafafa' }}
+              primary="Contas a pagar"
+            />
           </ListItem>
         </List>
         <Divider />

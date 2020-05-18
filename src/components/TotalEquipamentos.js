@@ -9,7 +9,7 @@ export default function TotalLinhas() {
   const [totalEquip, setTotalEquip] = useState(0);
 
   useEffect(() => {
-    setTotalEquip(999);
+    setTotalEquip(7);
   }, []);
 
   const useStyles = makeStyles(theme => ({
@@ -42,13 +42,13 @@ export default function TotalLinhas() {
         <Avatar className={classes.avatar}>
           <AssignmentIcon />
         </Avatar>
-        <Title>Equipamentos</Title>
+        <Title>Linhas Ativas</Title>
       </div>
       <Typography style={{ textAlign: 'center' }} component="p" variant="h3">
         {totalEquip}
       </Typography>
       <Typography color="textSecondary" className={classes.depositContext}>
-        Notebooks, celulares etc
+        Todas as operadoras
       </Typography>
     </CardTemplate>
   );

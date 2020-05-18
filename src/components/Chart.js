@@ -34,7 +34,7 @@ export default function Chart() {
 
   return (
     <CardTemplate>
-      <Title>Today</Title>
+      <Title>Custo fixo de TI mensal *EM CONSTRUÇÃO*</Title>
       <ResponsiveContainer>
         <LineChart
           data={data}
@@ -52,7 +52,7 @@ export default function Chart() {
               position="left"
               style={{ textAnchor: 'middle', fill: theme.palette.text.primary }}
             >
-              Sales ($)
+              Valores ($)
             </Label>
           </YAxis>
           <CartesianGrid />
